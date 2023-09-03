@@ -1,9 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
+const cookieSession = require('cookie-session');
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(
+    cookieSession({
+      keys: ['asdfghj'],
+    }),
+  );
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // this is for security, means it will remove extra property send thrugh request body that are not define in dtos

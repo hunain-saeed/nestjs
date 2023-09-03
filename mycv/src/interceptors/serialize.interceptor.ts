@@ -1,19 +1,24 @@
-import { CallHandler, ExecutionContext, NestInterceptor, UseInterceptors } from '@nestjs/common';
+import {
+  CallHandler,
+  ExecutionContext,
+  NestInterceptor,
+  UseInterceptors,
+} from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { Observable, map } from 'rxjs';
 
 // this validate datatype sould be class
 // it will check if data passed is not class TS will give error
-interface ClassConstructor{
-  new (...args: any[]): {}
+interface ClassConstructor {
+  new (...args: any[]): {};
 }
 
-export function Serialize(dto: ClassConstructor){
-  return UseInterceptors(new SerializeInterceptor(dto))
+export function Serialize(dto: ClassConstructor) {
+  return UseInterceptors(new SerializeInterceptor(dto));
 }
 
 export class SerializeInterceptor implements NestInterceptor {
-  constructor(private dto: any){}
+  constructor(private dto: any) {}
   intercept(
     context: ExecutionContext,
     next: CallHandler<any>,
