@@ -15,8 +15,9 @@ export class AuthService {
 
   async signup(email: string, password: string) {
     const users = await this.usersService.find(email);
+
     if (users.length) {
-      throw new BadRequestException('Email in user');
+      throw new BadRequestException('Email is in user');
     }
 
     const salt = randomBytes(8).toString('hex');
