@@ -1,3 +1,6 @@
+// Purpose of this interceptor is to run before any handler (method in controller)
+// We check the request if user id is there in the session, then we retrieve user using id
+// and store user object into reuqest object
 import {
   CallHandler,
   ExecutionContext,

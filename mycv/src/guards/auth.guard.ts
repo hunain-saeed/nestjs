@@ -1,3 +1,7 @@
+// Guard run before the interceptor, and after the middleware
+// it just check if user id is there in session or not.
+// if user session is not defined then we will return from here throw an exception
+
 import { CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
 
