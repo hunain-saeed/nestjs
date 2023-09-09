@@ -1,4 +1,4 @@
-// Guard run before the interceptor, and after the middleware
+// Guard run before the interceptor, and after the middleware (cookie session is middleware)
 // it just check if user id is there in session or not.
 // if user session is not defined then we will return from here throw an exception
 
