@@ -24,6 +24,9 @@ import { GetEstimateDto } from './dtos/get-estimate.dto';
 export class ReportsController {
   constructor(private reportsService: ReportsService) {}
 
+  // this route tell the what sould be price of new car created by user
+  // so when user is creating report, after filling decent amount of data
+  // we will show him estimate price
   @Get()
   getEstimate(@Query() query: GetEstimateDto) {
     return this.reportsService.createEstimate(query);
