@@ -1,0 +1,11 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  index: String!
+  securedResourceAdmin: String!
+  securedResource: String!
+  login(email: String!, password: String!): String!
+  signup(name: String!, email: String!, password: String!, role: String!): String!
+}
